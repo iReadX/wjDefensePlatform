@@ -2,16 +2,16 @@ $prominentColor:#ff6778;
 $blockBgColor:#fff;
 
 .assetsMain{
-  padding: 26px 34px;
+  padding: 18px 24px;
   .boxItem{
-    .boxMain:nth-child(2){padding:0 18px;}
+    .boxMain:nth-child(2){padding:0 14px;}
   }
   .boxContent{
     min-height: 235px;
-    margin-top: 20px;
-    padding:  15px 25px;
+    margin-top: 14px;
+    padding:  12px 18px;
     background: $blockBgColor;
-    h2{color: $prominentColor;font-size: 20px;font-weight: normal;
+    h2{color: $prominentColor;font-size: 18px;font-weight: normal;
       @include textEllipsis;
       b{font-weight: normal;
         background: #ffd5d6;padding:2px 4px}
@@ -24,19 +24,18 @@ $blockBgColor:#fff;
   .info{
     padding: 36px 25px 16px;
     h1{color: $prominentColor;
-      font-weight: normal;font-size: 30px;}
-    p{margin-top: 10px;font-size: 16px;color: #3f3f3f;@include textEllipsis;}
+      font-weight: normal;font-size: 26px;}
+    p{margin-top: 10px;font-size: 14px;color: #3f3f3f;@include textEllipsis;}
   }
   .circleBox{
-    padding: 8px 0;
-    height: 90px;
+    padding-top: 5px;
   }
-  .content,.textBox{height: 90px;width: 100%;
-    .circle{width: 90px;height: 90px;margin: 0 auto;display: block;}
+  .content,.textBox{height: 98px;width: 100%;
+    .circle{width: 98px;height: 98px;margin: 0 auto;display: block;}
   }
   .textBox{
     display: table;
-    p{font-size: 22px;display: table-cell;
+    p{font-size: 18px;display: table-cell;
       vertical-align:middle;color: #404040;}
   }
   .btnBox{
@@ -45,7 +44,11 @@ $blockBgColor:#fff;
   }
   .cancelBtn {
     padding: 10px 15px;
-    background-color: $prominentColor;border: none;border-radius: 20px;}
+    background-color: $prominentColor;border: none;border-radius: 20px;
+    &:hover{
+      background-color: $prominentColor;
+    }
+  }
   .speed{height: 4px;
     background-color: $prominentColor;
   }
@@ -70,7 +73,7 @@ $blockBgColor:#fff;
     border-left: 1px solid #f4f5fd;
     border-right: 1px solid #f4f5fd;
   }
-  p{font-size: 22px;margin-bottom: 14px;}
+  p{font-size: 20px;margin-bottom: 14px;}
   span{padding-left: 28px;
     position: relative;
     &:before{
@@ -92,8 +95,9 @@ $blockBgColor:#fff;
 
 .file{padding-right: 8px;
   .boxContent{
-    b{font-size: 28px;font-weight: normal;color: #ff0000;}
-    p{font-size: 18px;color: #404040;margin-top: 18px;
+    b{display: block;
+      width: 100%;font-size: 26px;font-weight: normal;color: #ff0000;@include textEllipsis;}
+    p{font-size: 16px;color: #404040;margin-top: 15px;
       height: 24px;overflow: hidden;text-overflow: ellipsis;
       white-space: nowrap;
     }
@@ -103,15 +107,15 @@ $blockBgColor:#fff;
   }
 }
 .special{padding-left: 8px;
-  strong{color: #2f2f2f;font-size: 24px;margin-right: 4px;}
+  strong{color: #2f2f2f;font-size: 22px;margin-right: 4px;}
   span{font-size: 16px;}
-  ul{height: 174px}
+  ul{height: 174px;position:relative;top: 10px;}
   li{
     font-size: 12px;
     position: relative;
     padding-left: 40px;
-    height: 34px;
-    line-height: 34px;
+    height: 33px;
+    line-height: 33px;
     span{width: 20px;height: 20px;text-align: center;
       color: #fff;
       font-size: 12px;
@@ -122,7 +126,7 @@ $blockBgColor:#fff;
         background-color: $prominentColor;
       }
     }
-    p{border-bottom: 1px solid #f9f9f9;}
+    p{border-bottom: 1px solid #e9e9e9;@include textEllipsis;}
   }
 }
 .threatWarning{padding-top: 35px;
@@ -140,13 +144,16 @@ $blockBgColor:#fff;
     }
     &.active:before{background-color: $prominentColor;}
     &:after{
-      @include iconBg;
+      @include iconfont;
       width: 16px;
-      height: 16px;
+      height: 100%;
       position: absolute;
       right: 0;
-      top: 15px;
-      background-position: -160px -4px;
+      top: 0;
+      font-size: 12px;
+      color: #9b9b9b;
+      content: "\e615";
+      //background-position: -160px -4px;
     }
   }
   p{@include textEllipsis;}
@@ -158,14 +165,17 @@ $blockBgColor:#fff;
     padding-right: 30px;
     position: relative;
     &:after{
-      @include iconBg;
+      @include iconfont;
       width: 30px;
       height: 30px;
-      background-position: -2px -74px;
+      //background-position: -2px -74px;
       position: absolute;
       right: 0;
       top: 0;
       cursor: pointer;
+      content: "\e60e";
+      text-align: right;
+      font-size: 20px;
     }
   }
 }
@@ -177,16 +187,15 @@ $blockBgColor:#fff;
 .threatTracking{
 }
 
-@media only screen and (max-width: 1919px){
-  .el-col-lg-class-noPaddingRight{
+@media only screen and (max-width: 1200px){
+  .el-col-md-class-noPaddingRight{
     padding-right: 0 !important;
   }
 }
 
-@media only screen and (max-width: 1200px){
+@media only screen and (max-width: 768px){
   .el-col-xs-class-noPadding,
-  .el-col-sm-class-noPadding,
-  .el-col-md-class-noPadding{
+  .el-col-sm-class-noPadding{
     padding: 0 !important;
   }
 }

@@ -25,7 +25,7 @@
                   :md="{span: 8}"
                   :lg="{span: 8}"
                   :xl="{span: 8}">
-            <el-progress class="circle" :width="90" type="circle" :percentage="safetySituation.speed" color="#ff6778"></el-progress>
+            <el-progress class="circle" :width="98" type="circle" :percentage="safetySituation.speed" color="#ff6778"></el-progress>
           </el-col>
           <el-col class="circleBox" :xs="{span: 19}"
                   :sm="{span: 17}"
@@ -55,8 +55,8 @@
       <el-col class="boxMain"
               :xs="{span: 24}"
               :sm="{span: 24}"
-              :md="{span: 24}"
-              :lg="{span: 12}"
+              :md="{span: 10}"
+              :lg="{span: 8}"
               :xl="{span: 8}"
       >
         <div class="boxContent">
@@ -80,8 +80,8 @@
       <el-col  class="boxMain"
               :xs="{span: 24, class: 'noPadding'}"
               :sm="{span: 24, class: 'noPadding'}"
-              :md="{span: 24, class: 'noPadding'}"
-              :lg="{span: 12, class: 'noPaddingRight'}"
+              :md="{span: 14, class: 'noPaddingRight'}"
+              :lg="{span: 8}"
               :xl="{span: 8}"
       >
         <el-col :span="12" class="file">
@@ -131,7 +131,7 @@
                :xs="{span: 24}"
                :sm="{span: 24}"
                :md="{span: 24}"
-               :lg="{span: 24}"
+               :lg="{span: 8}"
                :xl="{span: 8}"
       >
         <div class="boxContent">
@@ -154,8 +154,8 @@
      <el-col class="boxMain"
              :xs="{span: 24}"
              :sm="{span: 24}"
-             :md="{span: 24}"
-             :lg="{span: 12}"
+             :md="{span: 12}"
+             :lg="{span: 8}"
              :xl="{span: 8}">
        <div class="boxContent serverPort">
          <h2>端口服务数</h2>
@@ -172,8 +172,8 @@
       <el-col class="boxMain"
               :xs="{span: 24, class: 'noPadding'}"
               :sm="{span: 24, class: 'noPadding'}"
-              :md="{span: 24, class: 'noPadding'}"
-              :lg="{span: 12, class: 'noPaddingRight'}"
+              :md="{span: 12, class: 'noPaddingRight'}"
+              :lg="{span: 8}"
               :xl="{span: 8}">
         <div class="boxContent portAttack">
           <h2>受攻击端口分布</h2>
@@ -192,7 +192,7 @@
               :xs="{span: 24}"
               :sm="{span: 24}"
               :md="{span: 24}"
-              :lg="{span: 24}"
+              :lg="{span: 8}"
               :xl="{span: 8}">
         <div class="boxContent threatTracking">
           <h2>内源威胁追踪溯源</h2>

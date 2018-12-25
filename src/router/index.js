@@ -12,7 +12,7 @@ export default new Router({
       path: '/',
       redirect: '/login'
     },
-    view,
+    ...view,
     login,
     p404
   ],

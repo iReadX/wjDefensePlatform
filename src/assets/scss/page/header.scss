@@ -35,12 +35,15 @@ $logoWidth: 408px;
     position: relative;
     padding-left: 34px;
     &:before{
-      @include iconBg;
+      @include iconfont;
       width: 30px;
       height: 30px;
       position: absolute;
-      left: 0;
-      top: -32px;
+      left: 1px;
+      top: -6px;
+      text-align: center;
+      line-height: 30px;
+      font-size: 22px;
     }
     &:after{content: "|";
       position: absolute;
@@ -49,19 +52,15 @@ $logoWidth: 408px;
     }
   }
   .login:before{
-    filter:drop-shadow(-2px 27px 0px #fff);
-    background-position: 0 0;
+    content: "\e67c";
   }
   .setup:before{
-    filter:drop-shadow(-2px 27px 0px #fff);
-    background-position: -38px 0;
+    content: "\e613";
   }
   .help:before{
-    filter:drop-shadow(-2px 27px 0px #fff);
-    background-position: -76px 0;
+    content: "\e60c";
   }
   .contact:before{
-    filter:drop-shadow(-2px 27px 0px #fff);
-    background-position: -118px 0;
+    content: "\e618";
   }
 }

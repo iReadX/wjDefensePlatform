@@ -18,25 +18,132 @@
             <a><p>资产识别</p></a>
           </div>
         </router-link>
+        <router-link to="/overview/other2" class="nav" tag="li">
+          <div>
+            <a><p>资产识别</p></a>
+          </div>
+        </router-link>
       </ul>
     </router-link>
     <router-link to="/risk_assessment" class="item risk_assessment" tag="li">
       <a><p class="a">风险评估</p></a>
+      <ul>
+        <router-link to="/risk_assessment/assets" class="nav" tag="li">
+          <div>
+            <a><p>资产识别</p></a>
+          </div>
+        </router-link>
+        <router-link to="/risk_assessment/other" class="nav" tag="li">
+          <div>
+            <a><p>资产识别</p></a>
+          </div>
+        </router-link>
+        <router-link to="/risk_assessment/other2" class="nav" tag="li">
+          <div>
+            <a><p>资产识别</p></a>
+          </div>
+        </router-link>
+      </ul>
     </router-link>
     <router-link to="/risk_mitigation" class="item risk_mitigation" tag="li">
       <a><p class="a">风险缓解</p></a>
+      <ul>
+        <router-link to="/risk_mitigation/assets" class="nav" tag="li">
+          <div>
+            <a><p>资产识别</p></a>
+          </div>
+        </router-link>
+        <router-link to="/risk_mitigation/other" class="nav" tag="li">
+          <div>
+            <a><p>资产识别</p></a>
+          </div>
+        </router-link>
+        <router-link to="/risk_mitigation/other2" class="nav" tag="li">
+          <div>
+            <a><p>资产识别</p></a>
+          </div>
+        </router-link>
+      </ul>
     </router-link>
     <router-link to="/threat_perception" class="item threat_perception" tag="li">
       <a><p class="a">威胁感知</p></a>
+      <ul>
+        <router-link to="/threat_perception/assets" class="nav" tag="li">
+          <div>
+            <a><p>资产识别</p></a>
+          </div>
+        </router-link>
+        <router-link to="/threat_perception/other" class="nav" tag="li">
+          <div>
+            <a><p>资产识别</p></a>
+          </div>
+        </router-link>
+        <router-link to="/threat_perception/other2" class="nav" tag="li">
+          <div>
+            <a><p>资产识别</p></a>
+          </div>
+        </router-link>
+      </ul>
     </router-link>
     <router-link to="/analysis_report" class="item analysis_report" tag="li">
       <a><p class="a">分析报告</p></a>
+      <ul>
+        <router-link to="/analysis_report/assets" class="nav" tag="li">
+          <div>
+            <a><p>资产识别</p></a>
+          </div>
+        </router-link>
+        <router-link to="/analysis_report/other" class="nav" tag="li">
+          <div>
+            <a><p>资产识别</p></a>
+          </div>
+        </router-link>
+        <router-link to="/analysis_report/other2" class="nav" tag="li">
+          <div>
+            <a><p>资产识别</p></a>
+          </div>
+        </router-link>
+      </ul>
     </router-link>
     <router-link to="/response" class="item response" tag="li">
       <a><p class="a">响应</p></a>
+      <ul>
+        <router-link to="/response/assets" class="nav" tag="li">
+          <div>
+            <a><p>资产识别</p></a>
+          </div>
+        </router-link>
+        <router-link to="/response/other" class="nav" tag="li">
+          <div>
+            <a><p>资产识别</p></a>
+          </div>
+        </router-link>
+        <router-link to="/response/other2" class="nav" tag="li">
+          <div>
+            <a><p>资产识别</p></a>
+          </div>
+        </router-link>
+      </ul>
     </router-link>
     <router-link to="/system" class="item system" tag="li">
       <a><p class="a">系统管理</p></a>
+      <ul>
+        <router-link to="/system" class="nav" tag="li">
+          <div>
+            <a><p>资产识别</p></a>
+          </div>
+        </router-link>
+        <router-link to="/system/other" class="nav" tag="li">
+          <div>
+            <a><p>资产识别</p></a>
+          </div>
+        </router-link>
+        <router-link to="/system/other2" class="nav" tag="li">
+          <div>
+            <a><p>资产识别</p></a>
+          </div>
+        </router-link>
+      </ul>
     </router-link>
   </ul>
 </template>

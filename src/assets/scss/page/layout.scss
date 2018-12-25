@@ -1,5 +1,5 @@
 $headerHeight: 100px;
-$menuWidth: 230px;
+$menuWidth: 200px;
 
 .layout{
   width: 100%;
@@ -9,7 +9,7 @@ $menuWidth: 230px;
   .lHeaderBox{height: $headerHeight;}
   .lContentBox{height: calc(100vh - 100px);display: flex;}
   .lMenu{width: $menuWidth;height: 100%;overflow: auto;}
-  .lContentMain{width: calc(100% - 230px);height: 100%;background: #e7e7e7;overflow: auto;
+  .lContentMain{width: calc(100% - 200px);height: 100%;background: #e7e7e7;overflow: auto;
     @include scrollBar;
   }
 }
