@@ -12,7 +12,7 @@ let ip = []
   ip.push(random(1, 192) + '.' + random(0, 255) + '.' + random(0, 255) + '.' + random(0, 255))
 })
 
-'1'.repeat(24).split('').map((_, index) => {
+'1'.repeat(5).split('').map((_, index) => {
   let time = index.toString().padStart(2, '0').toString()
   '2'.repeat(5).split('').map((_, ipIndex) => {
     lineData.push({

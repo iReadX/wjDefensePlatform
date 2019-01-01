@@ -6,7 +6,7 @@
 <template>
   <ul class="menu">
     <router-link to="/overview" class="item assets" tag="li">
-      <a><p class="a">概览</p></a>
+      <a><p class="a" @click="openOrClose('')">概览</p></a>
       <ul>
         <router-link to="/overview/assets" class="nav" tag="li">
           <div>
@@ -25,8 +25,8 @@
         </router-link>
       </ul>
     </router-link>
-    <router-link to="/risk_assessment" class="item risk_assessment" tag="li">
-      <a><p class="a">风险评估</p></a>
+    <li to="/risk_assessment" :class="{'open':menu=='risk_assessment'}" class="item risk_assessment" tag="li">
+      <p class="a" @click="openOrClose('risk_assessment')">风险评估</p>
       <ul>
         <router-link to="/risk_assessment/assets" class="nav" tag="li">
           <div>
@@ -44,9 +44,9 @@
           </div>
         </router-link>
       </ul>
-    </router-link>
-    <router-link to="/risk_mitigation" class="item risk_mitigation" tag="li">
-      <a><p class="a">风险缓解</p></a>
+    </li>
+    <li to="/risk_mitigation" :class="{'open':menu=='risk_mitigation'}" class="item risk_mitigation" tag="li">
+      <a><p class="a" @click="openOrClose('risk_mitigation')">风险缓解</p></a>
       <ul>
         <router-link to="/risk_mitigation/assets" class="nav" tag="li">
           <div>
@@ -64,9 +64,9 @@
           </div>
         </router-link>
       </ul>
-    </router-link>
-    <router-link to="/threat_perception" class="item threat_perception" tag="li">
-      <a><p class="a">威胁感知</p></a>
+    </li>
+    <li to="/threat_perception" :class="{'open':menu=='threat_perception'}" class="item threat_perception" tag="li">
+      <a><p class="a" @click="openOrClose('threat_perception')">威胁感知</p></a>
       <ul>
         <router-link to="/threat_perception/assets" class="nav" tag="li">
           <div>
@@ -84,9 +84,9 @@
           </div>
         </router-link>
       </ul>
-    </router-link>
-    <router-link to="/analysis_report" class="item analysis_report" tag="li">
-      <a><p class="a">分析报告</p></a>
+    </li>
+    <li to="/analysis_report" :class="{'open':menu=='analysis_report'}" class="item analysis_report" tag="li">
+      <a><p class="a" @click="openOrClose('analysis_report')">分析报告</p></a>
       <ul>
         <router-link to="/analysis_report/assets" class="nav" tag="li">
           <div>
@@ -104,9 +104,9 @@
           </div>
         </router-link>
       </ul>
-    </router-link>
-    <router-link to="/response" class="item response" tag="li">
-      <a><p class="a">响应</p></a>
+    </li>
+    <li to="/response" :class="{'open':menu=='response'}" class="item response" tag="li">
+      <a><p class="a" @click="openOrClose('response')">响应</p></a>
       <ul>
         <router-link to="/response/assets" class="nav" tag="li">
           <div>
@@ -124,9 +124,9 @@
           </div>
         </router-link>
       </ul>
-    </router-link>
-    <router-link to="/system" class="item system" tag="li">
-      <a><p class="a">系统管理</p></a>
+    </li>
+    <li to="/system" :class="{'open':menu=='system'}" class="item system" tag="li">
+      <a><p class="a" @click="openOrClose('system')">系统管理</p></a>
       <ul>
         <router-link to="/system" class="nav" tag="li">
           <div>
@@ -144,7 +144,7 @@
           </div>
         </router-link>
       </ul>
-    </router-link>
+    </li>
   </ul>
 </template>
 <script>
@@ -153,13 +153,21 @@ export default {
   name: 'myMenu',
   props: {},
   data () {
-    return {}
+    return {
+      menu: ''
+    }
   },
   methods: {
     // 初始化
     init () {
+    },
+    openOrClose (menu) {
+      if (this.menu && this.menu === menu) {
+        this.menu = ''
+      } else {
+        this.menu = menu
+      }
     }
-
   },
   created () {
     this.init()

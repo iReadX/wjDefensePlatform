@@ -34,6 +34,17 @@ $menuPadding: 70px;
       }
       ul{display:block;}
     }
+    &.open{
+      color: $activeColor;
+      ul{display:block;}
+      &:after {
+        transform: rotate(90deg);
+      }
+    }
+  }
+  ul {
+    display:none;
+    background: #0a1523;
   }
   .risk_assessment {
     &:before {
@@ -65,10 +76,6 @@ $menuPadding: 70px;
       content: "\e619";
     }
   }
-  ul {
-    display:none;
-    background: #0a1523;
-  }
   p {
     color: $color;
     text-align: justify;
@@ -85,6 +92,7 @@ $menuPadding: 70px;
     padding: 0 $menuPadding + 2 0 $menuPadding - 8;
     margin: 0 auto;
     border-bottom: 1px solid #5f6a77;
+    cursor: pointer;
   }
   .active {
     .a {

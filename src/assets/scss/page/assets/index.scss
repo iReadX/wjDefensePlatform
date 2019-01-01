@@ -187,6 +187,8 @@ $blockBgColor:#fff;
 .threatTracking{
 }
 
+#serverPort,#portAttack,#threatTracking,#attackNumber{width: 100%;height: 100%;}
+
 @media only screen and (max-width: 1200px){
   .el-col-md-class-noPaddingRight{
     padding-right: 0 !important;

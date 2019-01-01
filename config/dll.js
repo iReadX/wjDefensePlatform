@@ -2,7 +2,7 @@ module.exports = {
   entry: {
     vue: ['vue'],
     ui: ['element-ui'],
-    tool: ['viser-vue']
+    tool: ['echarts']
   },
   output: '../static/dll',
   productionGzip: false

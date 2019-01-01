@@ -4,10 +4,13 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
-import viserVue from 'viser-vue'
+// import viserVue from 'viser-vue'
+import echarts from 'echarts'
+
+Vue.prototype.$echarts = echarts
 
 Vue.use(ElementUI)
-Vue.use(viserVue)
+// Vue.use(viserVue)
 
 Vue.config.productionTip = false
 

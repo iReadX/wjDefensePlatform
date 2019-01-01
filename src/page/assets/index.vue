@@ -160,12 +160,7 @@
        <div class="boxContent serverPort">
          <h2>端口服务数</h2>
          <div class="chartMain">
-           <v-chart :forceFit="true" :height="300" :data="axisData"
-                    :scale="axisScale">
-             <v-tooltip />
-             <v-axis />
-             <v-bar position="year*sales" />
-           </v-chart>
+           <div id="serverPort"></div>
          </div>
        </div>
      </el-col>
@@ -178,13 +173,7 @@
         <div class="boxContent portAttack">
           <h2>受攻击端口分布</h2>
           <div class="chartMain">
-            <v-chart :forceFit="true" :height="300" :data="pieData" :scale="pieScale">
-              <v-tooltip :showTitle="false" dataKey="item*percent" />
-              <v-axis />
-              <v-legend dataKey="item" />
-              <v-pie position="percent" color="item" :vStyle="pieStyle" :label="pieLabelConfig" />
-              <v-coord type="theta" :radius="0.75" :innerRadius="0.6" />
-            </v-chart>
+            <div id="portAttack"></div>
           </div>
         </div>
       </el-col>
@@ -197,13 +186,7 @@
         <div class="boxContent threatTracking">
           <h2>内源威胁追踪溯源</h2>
           <div class="chartMain">
-            <v-chart :forceFit="true" :height="300" :data="lineData" :scale="lineScale">
-              <v-tooltip />
-              <v-axis />
-              <v-legend />
-              <v-line position="time*value" :size="2" color="ip" adjust="stack" />
-              <v-stack-area position="time*value" color="ip" />
-            </v-chart>
+            <div id="threatTracking"></div>
           </div>
         </div>
       </el-col>
@@ -211,22 +194,13 @@
     <div class="boxContent chartBox">
       <h2>24小时受攻击次数</h2>
       <div class="chartMain">
-        <v-chart :forceFit="true" :height="300" :data="gLineData" :scale="gLineScale">
-          <v-tooltip :itemTpl="gItemTpl"/>
-          <v-axis />
-          <v-line position="time*value" />
-          <v-point position="time*value" shape="circle" />
-        </v-chart>
+        <div id="attackNumber"></div>
       </div>
     </div>
   </div>
 </template>
 <script>
 /* 当前组件必要引入 */
-import {axisData, axisScale} from './axis'
-import {pieData, pieScale, pieLabelConfig, pieStyle} from './pie'
-import {lineData, lineScale} from './line'
-import {gLineData, gLineScale, gItemTpl} from './gLine'
 
 export default {
   name: 'AssetsIndex',
@@ -236,29 +210,274 @@ export default {
       safetySituation: {
         speed: 46
       },
-      axisData,
-      axisScale,
-      pieData,
-      pieScale,
-      pieLabelConfig,
-      pieStyle,
-      lineData,
-      lineScale,
-      gLineData,
-      gLineScale,
-      gItemTpl
+      serverPortChart: null,
+      portAttackChart: null,
+      threatTrackingChart: null,
+      attackNumberChart: null
     }
   },
   methods: {
     // 初始化
     init () {
+    },
+    initChart () {
+      this.serverPort()
+      this.portAttack()
+      this.threatTracking()
+      this.attackNumber()
+    },
+    serverPort () {
+      // 基于准备好的dom，初始化echarts实例
+      this.serverPortChart = this.$echarts.init(document.getElementById('serverPort'))
+      // 绘制图表
+      this.serverPortChart.setOption({
+        // title: { text: '' },
+        color: ['#accbea'],
+        tooltip: {
+          formatter: '{b}: {c}'
+        },
+        grid: {
+          left: '6%',
+          right: '6%',
+          bottom: '18%',
+          containLabel: true
+        },
+        xAxis: {
+          data: ['53%', '150%', '51%', '40%', '48%', '45%', '80%', '43%'],
+          axisLine: {
+            lineStyle: {
+              color: '#accbea'
+            }
+          }
+        },
+        yAxis: {
+          type: 'value',
+          axisLine: {
+            lineStyle: {
+              color: '#accbea'
+            }
+          }
+        },
+        series: [{
+          name: '',
+          type: 'bar',
+          width: '6px',
+          data: [5, 20, 36, 10, 10, 20, 30, 40]
+        }]
+      })
+    },
+    portAttack () {
+      // 基于准备好的dom，初始化echarts实例
+      this.portAttackChart = this.$echarts.init(document.getElementById('portAttack'))
+      // 绘制图表
+      this.portAttackChart.setOption({
+        tooltip: {
+          trigger: 'item',
+          formatter: '端口{b}: {c} ({d}%)'
+        },
+        color: ['#f8e367', '#e18197', '#8abe6e', '#93ccce', '#7ababc'],
+        legend: {
+          orient: 'left',
+          x: 'right',
+          data: ['44', '223', '225', '7889', '567']
+        },
+        series: [
+          {
+            name: '',
+            type: 'pie',
+            radius: ['50%', '70%'],
+            avoidLabelOverlap: false,
+            label: {
+              normal: {
+                show: false,
+                position: 'center'
+              },
+              emphasis: {
+                show: true,
+                textStyle: {
+                  fontSize: '30',
+                  fontWeight: 'bold'
+                }
+              }
+            },
+            labelLine: {
+              normal: {
+                show: false
+              }
+            },
+            data: [
+              {value: 335, name: '44'},
+              {value: 310, name: '223'},
+              {value: 234, name: '225'},
+              {value: 135, name: '7889'},
+              {value: 1548, name: '567'}
+            ]
+          }
+        ]
+      })
+    },
+    threatTracking () {
+      // 基于准备好的dom，初始化echarts实例
+      this.threatTrackingChart = this.$echarts.init(document.getElementById('threatTracking'))
+      // 绘制图表
+      this.threatTrackingChart.setOption({
+        title: {
+          // text: '堆叠区域图'
+        },
+        color: ['#424242', '#8a9095', '#ababab', '#cfcfcf', '#e2e2e2', '#dedede', '#ececec', '#f4f4f4'],
+        tooltip: {
+          trigger: 'axis'
+          // axisPointer: {
+          //   type: 'cross',
+          //   label: {
+          //     backgroundColor: '#6a7985'
+          //   }
+          // }
+        },
+        legend: {
+          orient: 'left',
+          x: 'right',
+          data: ['192.168.99.1', '192.168.99.2', '192.168.99.3', '192.168.99.4', '192.168.99.5']
+        },
+        grid: {
+          top: '10px',
+          left: '0',
+          right: '130px',
+          bottom: '20px',
+          containLabel: true
+        },
+        xAxis: [
+          {
+            type: 'category',
+            boundaryGap: false,
+            data: ['12.01', '12.02', '12.03', '12.04', '12.04'],
+            axisLine: {
+              lineStyle: {
+                width: 0,
+                color: '#41a5f0'
+              }
+            }
+          }
+        ],
+        yAxis: [
+          {
+            type: 'value',
+            axisLine: {
+              lineStyle: {
+                width: 0,
+                color: '#41a5f0'
+              }
+            }
+          }
+        ],
+        series: [
+          {
+            name: '192.168.99.1',
+            type: 'line',
+            stack: '',
+            areaStyle: {},
+            data: [120, 132, 101, 134, 90, 230, 210]
+          },
+          {
+            name: '192.168.99.2',
+            type: 'line',
+            stack: '',
+            areaStyle: {},
+            data: [220, 182, 191, 234, 290, 330, 310]
+          },
+          {
+            name: '192.168.99.3',
+            type: 'line',
+            stack: '',
+            areaStyle: {},
+            data: [150, 232, 201, 154, 190, 330, 410]
+          },
+          {
+            name: '192.168.99.4',
+            type: 'line',
+            stack: '',
+            areaStyle: {normal: {}},
+            data: [320, 332, 301, 334, 390, 330, 320]
+          },
+          {
+            name: '192.168.99.5',
+            type: 'line',
+            stack: '',
+            label: {
+              normal: {
+                show: true,
+                position: 'bottom'
+              }
+            },
+            areaStyle: {normal: {}},
+            data: [820, 932, 901, 934, 1290, 1330, 1320]
+          }
+        ]
+      })
+    },
+    attackNumber () {
+      // 基于准备好的dom，初始化echarts实例
+      this.attackNumberChart = this.$echarts.init(document.getElementById('attackNumber'))
+      // 绘制图表
+      this.attackNumberChart.setOption({
+        xAxis: {
+          type: 'category',
+          data: this.getHours(),
+          axisLine: {
+            lineStyle: {
+              color: '#58b5fc'
+            }
+          }
+        },
+        color: ['#a5d1fd'],
+        tooltip: {
+          trigger: 'axis'
+        },
+        grid: {
+          top: '20px',
+          left: '20px',
+          right: '20px',
+          bottom: '40px',
+          containLabel: true
+        },
+        yAxis: {
+          type: 'value',
+          axisLine: {
+            nameRotate: 90,
+            lineStyle: {
+              color: '#58b5fc'
+            }
+          }
+        },
+        series: [{
+          data: [...'1'.repeat(24).split('').map(_ => this.random(100, 1000))],
+          type: 'line'
+        }]
+      })
+    },
+    getHours () {
+      let h = []
+      '1'.repeat(24).split('').map((_, i) => h.push(i.toString().padStart(2, '0').toString() + ':00'))
+      return h
+    },
+    random (lower, upper) {
+      return Math.floor(Math.random() * (upper - lower + 1)) + lower
     }
-
   },
   created () {
     this.init()
   },
   mounted () {
+    this.initChart()
+    this.$nextTick(function () {
+      let _this = this
+      window.onresize = function () {
+        _this.serverPortChart.resize()
+        _this.portAttackChart.resize()
+        _this.threatTrackingChart.resize()
+        _this.attackNumberChart.resize()
+      }
+    })
   },
   components: {}
 }
