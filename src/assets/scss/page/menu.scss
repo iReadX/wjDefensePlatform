@@ -2,9 +2,10 @@ $color: #fff;
 $activeColor: #ff6d60;
 $menuHeight: 64px;
 $navHeight: 60px;
-$menuPadding: 70px;
+$menuPadding: 64px;
 
 .menu {
+  width: $menuWidth;
   .item {
     position: relative;
     overflow: hidden;
@@ -39,6 +40,12 @@ $menuPadding: 70px;
       ul{display:block;}
       &:after {
         transform: rotate(90deg);
+      }
+    }
+    &.first{
+      &:after {
+        content: '';
+        transform: rotate(0deg);
       }
     }
   }
@@ -91,7 +98,7 @@ $menuPadding: 70px;
     line-height: $menuHeight;
     padding: 0 $menuPadding + 2 0 $menuPadding - 8;
     margin: 0 auto;
-    border-bottom: 1px solid #5f6a77;
+    border-bottom: 1px solid #43505f;
     cursor: pointer;
   }
   .active {
@@ -121,7 +128,6 @@ $menuPadding: 70px;
       }
       p {
         color: $activeColor;
-        font-size: 16px;
       }
     }
     p {
@@ -131,7 +137,7 @@ $menuPadding: 70px;
     }
     div {
       padding: 0 $menuPadding - 26 0 $menuPadding - 36;
-      border-bottom: 1px solid #fff;
+      border-bottom: 1px solid #141e2c;
     }
   }
 }

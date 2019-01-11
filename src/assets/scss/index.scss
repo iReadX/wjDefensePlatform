@@ -1,7 +1,7 @@
 @import './variables.scss';
 @import './mixin.scss';
 @import './transition.scss';
-@import "../icon/iconfont.scss";
+@import "page/iconfont";
 @import "./page/login";
 @import "./page/layout";
 @import "./page/header";
@@ -16,7 +16,7 @@
 
 body {
   height: 100%;
-  min-width: 946px;
+  min-width: 840px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;

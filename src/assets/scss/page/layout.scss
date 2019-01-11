@@ -4,12 +4,19 @@ $menuWidth: 200px;
 .layout{
   width: 100%;
   height: 100%;
+  min-width: 840px;
   overflow: hidden;
   background: #1a293c;
-  .lHeaderBox{height: $headerHeight;}
-  .lContentBox{height: calc(100vh - 100px);display: flex;}
-  .lMenu{width: $menuWidth;height: 100%;overflow: auto;@include scrollBar;}
-  .lContentMain{width: calc(100% - 200px);height: 100%;background: #e7e7e7;overflow: auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+  .lHeaderBox{width: 100%;height: $headerHeight;
+    position: absolute;top: 0;left: 0;background: #1a293c;}
+  .lContentBox{width: 100%;position: absolute;left: 0;top: $headerHeight;bottom: 0;}
+  .lMenu{width: $menuWidth;position: absolute;left: 0;top: 0;bottom: 0;overflow: hidden;}
+  .lmmbox{width: $menuWidth + 17px;height: 100%;padding-right: 17px;overflow-y: scroll;
+    background: #1a293c;}
+  .lContentMain{width: 100%;height: 100%;padding-left: $menuWidth;background: #e7e7e7;overflow: auto;
     @include scrollBar;
   }
 }

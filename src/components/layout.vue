@@ -10,7 +10,9 @@
     </div>
     <div class="lContentBox">
       <div class="lMenu">
-        <slot name="menu"></slot>
+        <div class="lmmbox">
+          <slot name="menu"></slot>
+        </div>
       </div>
       <div class="lContentMain">
         <slot name="content"></slot>

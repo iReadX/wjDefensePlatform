@@ -246,22 +246,32 @@ export default {
           data: ['53%', '150%', '51%', '40%', '48%', '45%', '80%', '43%'],
           axisLine: {
             lineStyle: {
-              color: '#accbea'
+              color: '#58b5fc'
             }
+          },
+          axisTick: {
+            show: false
           }
         },
         yAxis: {
           type: 'value',
+          scale: true,
+          splitLine: {
+            show: false
+          },
           axisLine: {
             lineStyle: {
-              color: '#accbea'
+              color: '#58b5fc'
             }
+          },
+          axisTick: {
+            show: false
           }
         },
         series: [{
           name: '',
           type: 'bar',
-          width: '6px',
+          barWidth: '40%',
           data: [5, 20, 36, 10, 10, 20, 30, 40]
         }]
       })
@@ -278,14 +288,25 @@ export default {
         color: ['#f8e367', '#e18197', '#8abe6e', '#93ccce', '#7ababc'],
         legend: {
           orient: 'left',
-          x: 'right',
-          data: ['44', '223', '225', '7889', '567']
+          // x: 'right',
+          itemWidth: 15,
+          itemHeight: 16,
+          top: 'middle',
+          left: '75%',
+          data: [
+            {name: '44', icon: 'image://' + require('../../assets/indications/indication1.png')},
+            {name: '223', icon: 'image://' + require('../../assets/indications/indication2.png')},
+            {name: '225', icon: 'image://' + require('../../assets/indications/indication3.png')},
+            {name: '7889', icon: 'image://' + require('../../assets/indications/indication4.png')},
+            {name: '567', icon: 'image://' + require('../../assets/indications/indication5.png')}
+          ]
         },
         series: [
           {
             name: '',
             type: 'pie',
             radius: ['50%', '70%'],
+            center: ['40%', '50%'],
             avoidLabelOverlap: false,
             label: {
               normal: {
@@ -337,20 +358,29 @@ export default {
         legend: {
           orient: 'left',
           x: 'right',
-          data: ['192.168.99.1', '192.168.99.2', '192.168.99.3', '192.168.99.4', '192.168.99.5']
+          icon: 'rect',
+          padding: [20, 5, 5, 5],
+          textStyle: {
+            padding: [15, 0]
+          },
+          data: ['192.168.99.5', '192.168.99.4', '192.168.99.3', '192.168.99.2', '192.168.99.1']
         },
         grid: {
-          top: '10px',
-          left: '0',
+          top: '30px',
+          left: '70px',
           right: '130px',
-          bottom: '20px',
-          containLabel: true
+          bottom: '30px'
         },
         xAxis: [
           {
             type: 'category',
+            name: '\n\n\n日期',
+            nameLocation: 'start',
+            nameTextStyle: {
+              color: '#333'
+            },
             boundaryGap: false,
-            data: ['12.01', '12.02', '12.03', '12.04', '12.04'],
+            data: ['12.01', '12.02', '12.03', '12.04', '12.05'],
             axisLine: {
               lineStyle: {
                 width: 0,
@@ -361,6 +391,40 @@ export default {
         ],
         yAxis: [
           {
+            name: '发\n起\n攻\n击\n的\n次\n数',
+            nameGap: -60,
+            nameTextStyle: {
+              color: '#333',
+              padding: [0, 0, 0, 20]
+            },
+            offset: 20,
+            show: true,
+            type: 'value',
+            axisLine: {
+              lineStyle: {
+                width: 0,
+                color: '#e6ebfc'
+              }
+            },
+            splitLine: {
+              lineStyle: {
+                color: '#e6ebfc'
+              }
+            },
+            axisLabel: {
+              color: '#41a5f0',
+              verticalAlign: 'bottom'
+            }
+          },
+          {
+            name: `攻\n击\n者\nip\n地\n址`,
+            nameGap: -48,
+            nameTextStyle: {
+              color: '#333'
+            },
+            offset: 10,
+            show: true,
+            width: 20,
             type: 'value',
             axisLine: {
               lineStyle: {
@@ -374,42 +438,56 @@ export default {
           {
             name: '192.168.99.1',
             type: 'line',
-            stack: '',
-            areaStyle: {},
+            stack: '1',
+            areaStyle: {
+              color: '#424242',
+              opacity: 1
+            },
+            symbol: 'none',
             data: [120, 132, 101, 134, 90, 230, 210]
           },
           {
             name: '192.168.99.2',
             type: 'line',
-            stack: '',
-            areaStyle: {},
+            stack: '1',
+            areaStyle: {
+              color: '#8a9095',
+              opacity: 1
+            },
+            symbol: 'none',
             data: [220, 182, 191, 234, 290, 330, 310]
           },
           {
             name: '192.168.99.3',
             type: 'line',
-            stack: '',
-            areaStyle: {},
+            stack: '1',
+            areaStyle: {
+              color: '#ababab',
+              opacity: 1
+            },
+            symbol: 'none',
             data: [150, 232, 201, 154, 190, 330, 410]
           },
           {
             name: '192.168.99.4',
             type: 'line',
-            stack: '',
-            areaStyle: {normal: {}},
+            stack: '1',
+            areaStyle: {
+              color: '#cfcfcf',
+              opacity: 1
+            },
+            symbol: 'none',
             data: [320, 332, 301, 334, 390, 330, 320]
           },
           {
             name: '192.168.99.5',
             type: 'line',
-            stack: '',
-            label: {
-              normal: {
-                show: true,
-                position: 'bottom'
-              }
+            stack: '1',
+            areaStyle: {
+              color: '#e2e2e2',
+              opacity: 1
             },
-            areaStyle: {normal: {}},
+            symbol: 'none',
             data: [820, 932, 901, 934, 1290, 1330, 1320]
           }
         ]
@@ -427,11 +505,38 @@ export default {
             lineStyle: {
               color: '#58b5fc'
             }
+          },
+          axisLabel: {
+            rotate: 40
           }
         },
         color: ['#a5d1fd'],
         tooltip: {
-          trigger: 'axis'
+          trigger: 'axis',
+          axisPointer: {
+            type: 'none'
+          },
+          formatter (params, ticket, callback) {
+            let html = '<table class="echarts-tooltips">'
+            html += '<tr class="row"><td class="left">SSH[22]:</td><td class="right">0次</td></tr>'
+            html += '<tr class="row"><td class="left">SMBD[445]:</td><td class="right">10次</td></tr>'
+            html += '<tr class="row"><td class="left">MySQL[3306]:</td><td class="right">100次</td></tr>'
+            html += '</table>'
+            return html
+          },
+          padding: 0,
+          backgroundColor: 'rgba(50, 50, 50, 0.4)',
+          position (point, params, dom, rect, size) {
+            let left = point[0] + 5
+            let bottom = size.viewSize[1] - point[1] + 5
+            if (left + size.contentSize[0] > size.viewSize[0]) {
+              left = size.viewSize[0] - size.contentSize[0]
+            }
+            return {
+              left: left,
+              bottom: bottom
+            }
+          }
         },
         grid: {
           top: '20px',
@@ -451,17 +556,61 @@ export default {
         },
         series: [{
           data: [...'1'.repeat(24).split('').map(_ => this.random(100, 1000))],
-          type: 'line'
+          type: 'line',
+          symbol: 'circle',
+          lineStyle: {
+            shadowColor: 'rgba(165, 209, 253, .5)',
+            shadowBlur: 10
+          },
+          emphasis: {
+            itemStyle: {
+              color: '#74A7DA',
+              borderColor: {
+                type: 'radial',
+                x: 0.5,
+                y: 0.5,
+                r: 0.5,
+                colorStops: [{
+                  offset: 0, color: '#74A7DA'
+                }, {
+                  offset: 0.3, color: '#74A7DA'
+                }, {
+                  offset: 0.52, color: '#444'
+                }, {
+                  offset: 0.59, color: '#444'
+                }, {
+                  offset: 0.60, color: '#74A7DA'
+                }, {
+                  offset: 0.69, color: '#74A7DA'
+                }, {
+                  offset: 0.70, color: '#DBECFC'
+                }, {
+                  offset: 0.79, color: '#DBECFC'
+                }, {
+                  offset: 0.8, color: '#CEE1F4'
+                }, {
+                  offset: 1, color: '#CEE1F4' // 100% 处的颜色
+                }],
+                globalCoord: false // 缺省为 false
+              },
+              borderWidth: 18,
+              shadowColor: 'rgba(165,209,253, .5)',
+              shadowBlur: 10
+            }
+          }
         }]
       })
     },
     getHours () {
       let h = []
-      '1'.repeat(24).split('').map((_, i) => h.push(i.toString().padStart(2, '0').toString() + ':00'))
+      '1'.repeat(24).split('').map((_, i) => h.push(this.padStart(i.toString()).toString() + ':00'))
       return h
     },
     random (lower, upper) {
       return Math.floor(Math.random() * (upper - lower + 1)) + lower
+    },
+    padStart (num) {
+      return +num < 10 ? '0' + num : num
     }
   },
   created () {

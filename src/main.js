@@ -7,6 +7,8 @@ import ElementUI from 'element-ui'
 // import viserVue from 'viser-vue'
 import echarts from 'echarts'
 
+require('es6-shim')
+
 Vue.prototype.$echarts = echarts
 
 Vue.use(ElementUI)

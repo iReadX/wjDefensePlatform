@@ -1,34 +1,53 @@
 $placeholderColor: #bfbfbf;
+$inputWidth: 360px;
+$inputHeight: 48px;
+$boxPaddingTB: 50px;
+$boxPaddingLR: 80px;
+$pdPaddingTop: 28px;
+$pPaddingTop: 20px;
+$loginHeight:64px;
+$boxMarginTop:36px;
+$loginBgColor:#263548;
 
 .login {
   width: 100%;
   height: 100%;
-  min-height: 670px;
-  background: #1a293c url(/static/img/loginBg.png) no-repeat bottom center;
+  min-height: 500px;
+  background: $loginBgColor url(/static/img/loginBg.png) no-repeat bottom center;
+  .indexLogin{
+    padding: 14px 110px;
+    img{height: 50px;}
+  }
   .main {
-    width: 740px;
-    height: 625px;
+    width: $inputWidth+$boxPaddingLR*2;
+    height: $inputHeight * 4 + $boxPaddingTB*2 + $pdPaddingTop+$pPaddingTop+$loginHeight+$boxMarginTop;
     margin: 0 auto;
-    position: relative;
+    position: absolute;
+    left: 0;
+    right: 0;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-65%);
   }
   .logo {
+    width: 384px;
+    height: $loginHeight;
     display: block;
     margin: 0 auto;
+    p,img{height: 100%;float: left;}
+    p{margin: 0;padding: 0;font-size:24px;margin-left: 20px;letter-spacing: 5px;color: #fff;line-height: 64px;}
   }
   .box {
-    width: 740px;
-    height: 456px;
-    padding: 84px 135px 88px;
+    width: $inputWidth+$boxPaddingLR*2;
+    height: $inputHeight * 4 + $boxPaddingTB*2 + $pdPaddingTop+$pPaddingTop;
+    padding: $boxPaddingTB $boxPaddingLR;
     background: #edf1f2;
     border-radius: 40px;
-    margin-top: 36px;
+    margin-top: $boxMarginTop;
   }
   .username, .password {
-    width: 470px;
-    height: 58px;
-    padding-left: 78px;
+    width: $inputWidth;
+    height: $inputHeight;
+    padding-left: 68px;
     border: 2px solid #d9d9d9;
     border-radius: 10px;
     position: relative;
@@ -38,7 +57,7 @@ $placeholderColor: #bfbfbf;
       height: 100%;
       background: transparent;
       border: none;
-      font-size: 24px;
+      font-size: 18px;
     }
     input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
       color: $placeholderColor;
@@ -57,7 +76,7 @@ $placeholderColor: #bfbfbf;
       //@include iconBg;
       width: 36px;
       height: 36px;
-      margin: 10px 18px;
+      margin: 4px 16px;
       position: absolute;
       left: 0;
       top: 0;
@@ -74,39 +93,40 @@ $placeholderColor: #bfbfbf;
     }
   }
   .password {
-    margin-top: 28px;
+    margin-top: $pdPaddingTop;
     &:before {
       content: "\e60f";
       //background-position: 83px -81px;
     }
   }
   p {
-    margin-top: 20px;
+    margin-top: $pPaddingTop;
     text-align: right;
-    height: 26px;
+    height: 24px;
   }
   label {
     font-weight: normal;
-    font-size: 18px;
+    font-size: 16px;
     color: $placeholderColor;
     float: right;
-    margin-left: 18px;
+    margin-left: 10px;
   }
   input[type=checkbox] {
-    width: 26px;
-    height: 26px;
+    width: 20px;
+    height: 20px;
     float: right;
+    margin-top: 2px;
     background: #fff;
   }
   button {
-    margin-top: 36px;
-    width: 470px;
-    height: 56px;
+    margin-top: 24px;
+    width: $inputWidth;
+    height: $inputHeight;
     text-align: center;
     border: none;
-    font-size: 30px;
+    font-size: 22px;
     color: #fff;
-    background-color: #1a293c;
+    background-color: $loginBgColor + 20;
     border-radius: 10px;
     cursor: pointer;
   }

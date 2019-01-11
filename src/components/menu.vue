@@ -5,25 +5,10 @@
 -->
 <template>
   <ul class="menu">
-    <router-link to="/overview" class="item assets" tag="li">
-      <a><p class="a" @click="openOrClose('')">概览</p></a>
-      <ul>
-        <router-link to="/overview/assets" class="nav" tag="li">
-          <div>
-            <a><p>资产识别</p></a>
-          </div>
-        </router-link>
-        <router-link to="/overview/other" class="nav" tag="li">
-          <div>
-            <a><p>资产识别</p></a>
-          </div>
-        </router-link>
-        <router-link to="/overview/other2" class="nav" tag="li">
-          <div>
-            <a><p>资产识别</p></a>
-          </div>
-        </router-link>
-      </ul>
+    <router-link to="/overview/assets" class="item first" tag="li">
+      <a><p class="a" @click="
+/* eslint-disable no-irregular-whitespace */
+openOrClose('')">概　　览</p></a>
     </router-link>
     <li to="/risk_assessment" :class="{'open':menu=='risk_assessment'}" class="item risk_assessment" tag="li">
       <p class="a" @click="openOrClose('risk_assessment')">风险评估</p>
@@ -106,7 +91,9 @@
       </ul>
     </li>
     <li to="/response" :class="{'open':menu=='response'}" class="item response" tag="li">
-      <a><p class="a" @click="openOrClose('response')">响应</p></a>
+      <a><p class="a" @click="
+/* eslint-disable no-irregular-whitespace */
+openOrClose('response')">响　　应</p></a>
       <ul>
         <router-link to="/response/assets" class="nav" tag="li">
           <div>
@@ -128,7 +115,7 @@
     <li to="/system" :class="{'open':menu=='system'}" class="item system" tag="li">
       <a><p class="a" @click="openOrClose('system')">系统管理</p></a>
       <ul>
-        <router-link to="/system" class="nav" tag="li">
+        <router-link to="/system/assets" class="nav" tag="li">
           <div>
             <a><p>资产识别</p></a>
           </div>

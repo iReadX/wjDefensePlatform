@@ -5,7 +5,10 @@
 -->
 <template>
   <div class="header">
-    <img src="/static/img/logo.png" class="logo">
+    <div class="logo">
+      <img src="/static/img/logo.png">
+      <p>戍将内源威胁防御平台</p>
+    </div>
     <div class="todo">
       <ul>
         <li class="item">
